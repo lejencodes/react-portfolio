@@ -1,0 +1,161 @@
+@import "../../global.scss";
+
+.arts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: $secondColor;
+
+    @include mobile {
+        justify-content: flex-start;
+    }
+
+    h1 {
+        font-size: 40px;
+        color: $fourthColor;
+
+        @include mobile {
+            font-size: 24px;
+        }
+    }
+
+    h6 {
+        font-size: 18px;
+        color: $fourthColor;
+
+        @include mobile {
+            font-size: 14px;
+            padding: 10px 5px;
+            text-align: center;
+        }
+    }
+
+    .art-container {
+        height: 520px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include mobile {
+            width: 300px;
+            height: 70%;
+        }
+
+        .item {
+            height: 100%;
+            width: 500px;
+            background-color: $thirdColor;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+
+            @include mobile {
+                height: 82%;
+                width: 300px;
+            }
+
+            .art-img {
+                transition: all 1s ease-out;
+                box-shadow: 0 0 25px -8px $firstColor;
+                height: 90%;
+                cursor: pointer;
+                animation: tilt 2s infinite;
+
+                @keyframes tilt {
+                    25% {
+                        transform: rotate(-5deg);
+                    }
+
+                    50% {
+                        transform: rotate(0deg);
+                    }
+
+                    75% {
+                        transform: rotate(5deg);
+                    }
+
+                    100% {
+                        transform: rotate(0deg);
+                    }
+                }
+
+                &:hover {
+                    animation: none;
+                }
+            }
+        }
+    }
+
+    .viewBtn {
+        width: 120px;
+        height: 30px;
+        color: $firstColor;
+        background-color: $fourthColor;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: 500;
+        transition: all ease 0.06s;
+        text-decoration: none;
+        text-align: center;
+
+        @include mobile {
+            width: 100px;
+            height: 30px;
+            font-size: 14px;
+            font-weight: 900;
+        }
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
+
+.gallery-modal {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $firstColor;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0);
+    z-index: 999;
+    transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease-in-out;
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    .icon {
+        display: flex;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        background-color: #fff;
+        width: 30px;
+        height: 30px;
+        padding: 5px;
+        margin: 0 10px;
+        cursor: pointer;
+
+        @include mobile {
+            width: 23px;
+            height: 23px;
+        }
+    }
+
+    &.open {
+        visibility: visible;
+        opacity: 1;
+        transform: scale(1);
+    }
+}

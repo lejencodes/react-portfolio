@@ -1,0 +1,52 @@
+@import "./global.scss";
+
+.app {
+    height: 100vh;
+
+    .sections {
+        height: calc(100vh - 70px);
+        position: relative;
+        top: 70px;
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            // display: none;
+            background-color: $secondColor;
+            width: 8px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: $fourthColor;
+        }
+
+        >* {
+            width: 100vw;
+            height: calc(100vh - 70px);
+            scroll-snap-align: start;
+        }
+
+        .footer {
+            height: 120px;
+
+            @include mobile {
+                height: 70px;
+            }
+        }
+
+        .gallery-container {
+            height: 100vh;
+        }
+    }
+}
+
+.have-notice {
+    height: 100vh;
+    background-color: $firstColor;
+}
+
+.no-notice {
+    visibility: hidden;
+    opacity: hidden;
+}

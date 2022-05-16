@@ -1,0 +1,112 @@
+@import "../../global.scss";
+.contact {
+    background-color: $secondColor;
+    display: flex;
+    @include mobile {
+        flex-direction: column;
+        height: 80%;
+    }
+    .left {
+        // background-color: $thirdColor;
+        overflow: hidden;
+        flex: 1;
+        img {
+            height: 100%;
+        }
+    }
+    .right {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        @include mobile {
+            justify-content: space-evenly;
+        }
+        h1 {
+            font-size: 40px;
+            color: $fourthColor;
+            @include mobile {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 70%;
+            height: 70%;
+            @include mobile {
+                width: 65%;
+                justify-content: flex-start;
+            }
+            input {
+                width: 400px;
+                height: 30px;
+                font-size: 24px;
+                background-color: $thirdColor;
+                @include mobile {
+                    font-size: 14px;
+                    width: 270px;
+                    height: 25px;
+                    text-align: center;
+                }
+            }
+            textarea {
+                width: 400px;
+                height: 200px;
+                font-size: 24px;
+                outline: none;
+                background-color: $thirdColor;
+                // border: 3px solid $mainColor;
+                @include mobile {
+                    font-size: 14px;
+                    width: 270px;
+                    height: 140px;
+                    text-align: center;
+                }
+            }
+            button {
+                width: 150px;
+                height: 40px;
+                color: $firstColor;
+                background-color: $fourthColor;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                font-size: 18px;
+                transition: all ease 0.06s;
+                overflow: hidden;
+                &:hover {
+                    transform: scale(1.05);
+                }
+                @include mobile {
+                    width: 80px;
+                    height: 40px;
+                    font-size: 12px;
+                    font-weight: 900;
+                }
+            }
+            span {
+                color: rgb(8, 255, 8);
+                @include mobile {
+                    padding: 14px 0;
+                    font-size: 12px;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+}
+
+.footer-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: $secondColor;
+    @include mobile {
+        align-items: center;
+    }
+}

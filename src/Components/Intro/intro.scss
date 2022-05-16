@@ -1,0 +1,206 @@
+@import "../../global.scss";
+.intro {
+    background-color: $secondColor;
+    display: flex;
+    @include mobile {
+        flex-direction: column;
+        align-items: center;
+    }
+    .left {
+        overflow: hidden;
+        flex: 0.5;
+        .img-container {
+            width: 700px;
+            height: 700px;
+            overflow: hidden;
+            background-color: $fourthColor;
+            border-radius: 50%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            float: right;
+            @include mobile {
+                align-items: flex-start;
+            }
+            // animation: introImg 5s infinite;
+            // @keyframes introImg {
+            //     0% {
+            //         background-color: $textColor;
+            //     }
+            //     25% {
+            //         background-color: yellow;
+            //     }
+            //     50% {
+            //         background-color: red;
+            //         transform: translateY(20px);
+            //     }
+            //     75% {
+            //         background-color: greenyellow;
+            //     }
+            //     100% {
+            //         background-color: $textColor;
+            //         transform: translateY(20px);
+            //     }
+            // }
+            img {
+                height: 100%;
+                @include mobile {
+                    height: 45%;
+                }
+            }
+        }
+    }
+    .right {
+        flex: 0.5;
+        overflow: hidden;
+        position: relative;
+        .intro-wrapper {
+            display: flex;
+            flex-direction: column;
+            padding-left: 20px;
+            // align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            color: $thirdColor;
+            overflow: hidden;
+            @include mobile {
+                align-items: center;
+                padding-left: 0;
+                justify-content: flex-start;
+            }
+            h1 {
+                font-size: 40px;
+                font-weight: 700;
+                overflow: hidden;
+                padding: 10px 5px;
+                @include mobile {
+                    font-size: 26px;
+                }
+            }
+            // h2 {
+            //     font-size: 35px;
+            //     font-weight: 500;
+            //     @include mobile {
+            //         font-size: 22px;
+            //     }
+            // }
+            p {
+                font-size: 16px;
+                font-weight: 500;
+                padding: 10px 5px;
+                @include mobile {
+                    font-size: 14px;
+                }
+            }
+            h2 {
+                font-weight: 400;
+                font-size: 24px;
+                padding: 10px 5px;
+                span {
+                    font-weight: 700;
+                    color: $fourthColor;
+                    @include mobile {
+                        font-size: 14px;
+                    }
+                }
+                @include mobile {
+                    font-size: 18px;
+                }
+                .ityped-cursor {
+                    animation: blink 1s infinite;
+                    @keyframes blink {
+                        50% {
+                            opacity: 1;
+                        }
+                        100% {
+                            opacity: 0;
+                        }
+                    }
+                }
+            }
+        }
+        button {
+            position: absolute;
+            bottom: 40px;
+            left: 40%;
+            overflow: hidden;
+            width: 150px;
+            height: 40px;
+            color: $firstColor;
+            background-color: $fourthColor;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all ease 0.06s;
+            overflow: hidden;
+            &:hover {
+                transform: scale(1.05);
+            }
+            @include mobile {
+                height: 22px;
+                width: 100px;
+                left: 35%;
+                bottom: 35px;
+                font-size: 12px;
+                font-weight: 900;
+            }
+            // img {
+            //     width: 50px;
+            //     height: 50px;
+            //     animation: pop 2s infinite;
+            //     transform: rotate(90deg);
+            //     @include mobile {
+            //         width: 36px;
+            //         height: 36px;
+            //     }
+            // }
+            @keyframes pop {
+                100% {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}
+
+.about-modal {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $firstColor;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0);
+    z-index: 999;
+    transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease-in-out;
+     ::-webkit-scrollbar {
+        display: none;
+    }
+    .icon {
+        display: flex;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        background-color: #fff;
+        width: 30px;
+        height: 30px;
+        padding: 5px;
+        margin: 0 10px;
+        cursor: pointer;
+        @include mobile {
+            width: 23px;
+            height: 23px;
+        }
+    }
+    &.open {
+        visibility: visible;
+        opacity: 1;
+        transform: scale(1);
+    }
+}

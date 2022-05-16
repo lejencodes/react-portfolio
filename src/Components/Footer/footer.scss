@@ -1,0 +1,38 @@
+@import "../../global.scss";
+.footer {
+    background-color: $firstColor;
+    color: $thirdColor;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    h5 {
+        font-size: 24px;
+        @include mobile {
+            font-size: 10px;
+            text-align: center;
+        }
+    }
+    .sm-container {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        overflow: hidden;
+    }
+    .icon {
+        font-size: 38px;
+        padding: 10px;
+        color: $thirdColor;
+        &:hover {
+            transform: scale(1.07);
+            color: $fourthColor;
+        }
+        &:active {
+            color: $fourthColor;
+        }
+        @include mobile {
+            font-size: 16px;
+        }
+    }
+}

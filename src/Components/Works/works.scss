@@ -1,0 +1,179 @@
+@import "../../global.scss";
+.works {
+    background-color: $secondColor;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+    @include mobile {
+        justify-content: flex-start;
+    }
+    h1 {
+        font-size: 40px;
+        color: $fourthColor;
+        z-index: 1;
+        position: absolute;
+        top: 0px;
+        @include mobile {
+            font-size: 25px;
+        }
+    }
+    h6 {
+        color: $fourthColor;
+        position: absolute;
+        top: 58px;
+        z-index: 99;
+        font-size: 18px;
+        @include mobile {
+            display: none;
+        }
+    }
+    .arrow {
+        position: absolute;
+        height: 70px;
+        cursor: pointer;
+        &.left {
+            animation: popL 2s infinite;
+            left: 100px;
+            transform: rotate(180deg);
+        }
+        &.right {
+            animation: popR 2s infinite;
+            right: 100px;
+        }
+        @keyframes popL {
+            100% {
+                opacity: 0;
+            }
+        }
+        @keyframes popR {
+            50% {
+                opacity: 0;
+            }
+        }
+        @include mobile {
+            display: none;
+        }
+    }
+    .slider {
+        height: 480px;
+        display: flex;
+        position: absolute;
+        left: 0vw;
+        transition: all 1s ease-out;
+        @include mobile {
+            height: 90vh;
+            flex-direction: column;
+            justify-content: center;
+            // top: 8px;
+        }
+        .slider-container {
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .item {
+                height: 100%;
+                width: 750px;
+                background-color: $thirdColor;
+                border-radius: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                @include mobile {
+                    width: 320px;
+                    height: 150px;
+                    margin: 20px 0 0 0;
+                }
+                .left {
+                    flex: 4;
+                    height: 80%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    @include mobile {
+                        width: 100%;
+                        height: 100%;
+                    }
+                    .left-container {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        width: 90%;
+                        height: 70%;
+                        .img-container {
+                            width: 40px;
+                            height: 40px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border-radius: 50%;
+                            background-color: $fourthColor;
+                            border-radius: 8px;
+                            @include mobile {
+                                width: 20px;
+                                height: 20px;
+                            }
+                            img {
+                                width: 30px;
+                                @include mobile {
+                                    width: 15px;
+                                }
+                            }
+                        }
+                        h2 {
+                            font-size: 18px;
+                            @include mobile {
+                                font-size: 14px;
+                            }
+                        }
+                        p {
+                            font-size: 13px;
+                            @include mobile {
+                                display: none;
+                            }
+                        }
+                        a {
+                            text-decoration: none;
+                            font-size: 12px;
+                            font-weight: 600;
+                            text-decoration: underline;
+                            cursor: pointer;
+                            width: 30%;
+                            color: $firstColor;
+                            @include mobile {
+                                font-size: 10px;
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+                .right {
+                    flex: 8;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    overflow: hidden;
+                    flex-direction: column;
+                    align-items: center;
+                    .slider-img {
+                        height: 90%;
+                        width: 100%;
+                        border-radius: 8px;
+                        margin-right: 10px; // transform: rotate(-10deg);
+                    }
+                    .slider-btn {
+                        cursor: pointer;
+                        width: 70px;
+                        height: 30px;
+                        text-decoration: none;
+                        background-color: $fourthColor;
+                        border-radius: 8px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,59 @@
+@import "../../global.scss";
+.notice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $secondColor;
+    height: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0);
+    z-index: 999;
+    transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease-in-out;
+    h1 {
+        color: $fourthColor;
+        font-size: 50px;
+    }
+    .notice-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 820px;
+        height: 480px;
+        background-color: $thirdColor;
+        color: $firstColor;
+        text-align: left;
+        p {
+            padding: 30px;
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 40px;
+        }
+        button {
+            width: 150px;
+            height: 40px;
+            color: $firstColor;
+            background-color: $fourthColor;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all ease 0.06s;
+            overflow: hidden;
+            &:hover {
+                transform: scale(1.05);
+            }
+            @include mobile {
+                width: 100px;
+                height: 50px;
+            }
+        }
+    }
+    &.open {
+        visibility: visible;
+        opacity: 1;
+        transform: scale(1);
+    }
+}

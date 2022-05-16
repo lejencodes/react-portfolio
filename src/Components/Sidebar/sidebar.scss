@@ -1,0 +1,42 @@
+@import "../../global.scss";
+.menu {
+    background-color: $firstColor;
+    width: 300px;
+    height: 100vh;
+    color: $thirdColor;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.1s ease-in;
+    &.active {
+        right: 0;
+        background-color: $secondColor;
+        color: $thirdColor;
+        transition: all 1s ease-in;
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-size: 25px;
+            font-weight: 300;
+            li {
+                margin-bottom: 25px;
+                a {
+                    font-size: inherit;
+                    transition: all 0.3s ease;
+                    text-decoration: none;
+                    color: $thirdColor;
+                }
+                &:hover {
+                    font-weight: 700;
+                    color: $fourthColor;
+                }
+            }
+        }
+    }
+}

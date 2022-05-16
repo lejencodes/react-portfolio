@@ -1,0 +1,120 @@
+@import "../../global.scss";
+.navbar {
+    background-color: $firstColor;
+    color: $thirdColor;
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    overflow: hidden;
+    transition: all 1s ease;
+    .nav-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: inherit;
+        .left {
+            display: flex;
+            align-items: baseline;
+            padding: 10px;
+            .logo {
+                padding: 10px 8px;
+                font-size: 25px;
+                font-weight: 500;
+                text-decoration: none;
+                margin-right: 25px;
+                color: inherit;
+                transition: all 0.3s ease;
+                color: $fourthColor;
+                @include mobile {
+                    font-size: 22px;
+                }
+                // animation: coolLogo 10s infinite;
+                // @keyframes coolLogo {
+                //     0% {
+                //         color: $textColor;
+                //     }
+                //     25% {
+                //         color: yellow;
+                //     }
+                //     50% {
+                //         color: red;
+                //     }
+                //     75% {
+                //         color: greenyellow;
+                //     }
+                //     100% {
+                //         color: $textColor;
+                //     }
+                // }
+            }
+            .logo:hover {
+                font-weight: 900;
+            }
+            .contact-items {
+                @include mobile {
+                    display: none;
+                }
+                display: flex;
+                align-items: center;
+                margin-right: 15px;
+                font-weight: 500;
+                .icon {
+                    font-size: 18px;
+                    margin-right: 5px;
+                }
+                span {
+                    background-color: transparent;
+                    font-weight: 500;
+                    &:hover {
+                        font-weight: 700;
+                    }
+                    a {
+                        text-decoration: none;
+                        color: inherit;
+                    }
+                }
+            }
+        }
+        .right {
+            .hamburger {
+                overflow: hidden;
+                width: 35px;
+                height: 22px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                margin-right: 20px;
+                cursor: pointer;
+                span {
+                    width: 100%;
+                    height: 4px;
+                    background-color: $fourthColor;
+                    transform-origin: left;
+                    transition: all 1.5s ease;
+                }
+            }
+        }
+    }
+    &.active {
+        background-color: $secondColor;
+        color: $thirdColor;
+        .hamburger {
+            overflow: hidden;
+            span {
+                &:first-child {
+                    background-color: $fourthColor;
+                    transform: rotate(45deg);
+                }
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+                &:last-child {
+                    background-color: $fourthColor;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+}

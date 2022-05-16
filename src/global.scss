@@ -1,0 +1,11 @@
+//colors used all over the site
+$firstColor: #0c0f0a;
+$secondColor: #333533;
+$thirdColor: #eff6e0;
+$fourthColor: #ffd100;
+$width: 768px;
+@mixin mobile {
+    @media (max-width: #{$width}) {
+        @content;
+    }
+}
